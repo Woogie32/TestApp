@@ -5,7 +5,7 @@ import Observation
 @Observable
 final class TodoListViewModel {
     private(set) var todos: [Todo] = []
-    private(set) var errorMessage: String?
+    var errorMessage: String?
 
     private let fetchTodos: FetchTodosUseCase
     private let addTodo: AddTodoUseCase

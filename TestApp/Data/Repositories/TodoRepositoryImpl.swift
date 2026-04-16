@@ -1,6 +1,6 @@
 import Foundation
 
-final class TodoRepositoryImpl: TodoRepository {
+struct TodoRepositoryImpl: TodoRepository {
     private let dataSource: TodoDataSource
 
     init(dataSource: TodoDataSource) {

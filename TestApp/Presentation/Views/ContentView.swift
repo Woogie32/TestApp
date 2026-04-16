@@ -44,6 +44,17 @@ struct ContentView: View {
                 .background(Color(.systemBackground))
             }
             .task { await viewModel.load() }
+            .alert(
+                "오류",
+                isPresented: Binding(
+                    get: { viewModel.errorMessage != nil },
+                    set: { if !$0 { viewModel.errorMessage = nil } }
+                )
+            ) {
+                Button("확인", role: .cancel) { viewModel.errorMessage = nil }
+            } message: {
+                Text(viewModel.errorMessage ?? "")
+            }
         }
     }
 }
