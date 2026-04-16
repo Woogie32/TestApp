@@ -61,6 +61,19 @@ ToDoList/
 
 ---
 
+## 🖼️ 디자인 참고 자료
+
+UI 작업 시 참고할 시안/스크린샷은 [docs/design/](docs/design/) 에 화면별로 정리되어 있습니다.
+
+- 화면별 폴더: `docs/design/<screen-name>/` (예: `todo-list/`, `add-todo/`)
+- 공통 요소(색상/아이콘 등): `docs/design/common/`
+- **UI 관련 작업을 시작할 때 해당 화면 폴더를 먼저 확인할 것.**
+- 자세한 규칙은 [docs/design/README.md](docs/design/README.md) 참고.
+
+> ⚠️ 앱에 실제로 표시되는 이미지는 `ToDoList/Assets.xcassets` 에 추가하며, `docs/design/` 은 순수 참고용입니다.
+
+---
+
 ## 🔨 빌드 & 테스트
 
 **반드시 MCP 도구를 사용할 것.** `xcodebuild` 를 Bash로 직접 호출하지 않습니다.
@@ -226,50 +239,7 @@ Presentation  ──→  Domain  ←──  Data
 - **Presentation (ViewModel)**: 가짜 UseCase 주입하여 상태 변화 검증
 - View 자체는 단위 테스트 대상이 아님 (스냅샷/UI 테스트로 대체)
 
----
-
-## 🎨 디자인 규칙
-
-### 색상
-- **Primary**: `Color.accentColor` (Assets의 `AccentColor` 사용)
-- **Destructive**: `Color.red` (삭제 버튼 전용)
-- **Background**: `Color(.systemBackground)` — 다크모드 자동 대응
-- **보조 텍스트**: `.foregroundStyle(.secondary)`
-- 하드코딩 금지 — 모든 색상은 `Assets.xcassets` 또는 시스템 색상만 사용
-
-### 폰트
-- **제목**: `.font(.largeTitle).bold()`
-- **섹션 헤더**: `.font(.headline)`
-- **본문**: `.font(.body)`
-- **캡션**: `.font(.caption).foregroundStyle(.secondary)`
-- 커스텀 폰트 크기(`.system(size: 20)` 등) 직접 지정 금지
-  - 이유: Dynamic Type(접근성 글자 크기) 자동 대응을 위해 시맨틱 스타일만 사용
-
-### 간격 (Spacing)
-- 기본 단위는 **8pt 시스템**: `4, 8, 12, 16, 24, 32` 중에서만 선택
-- `VStack` / `HStack` 의 `spacing`, `.padding()` 값 모두 이 범위 준수
-- 임의값(`spacing: 13` 등) 사용 금지
-
-### 컴포넌트 규칙
-- **버튼**: `Button` + `.buttonStyle(.borderedProminent)` 기본 사용
-- **리스트**: `List` 사용 (커스텀 `ScrollView` + `VStack` 조합 금지)
-- **아이콘**: **SF Symbols** 만 사용 — `Image(systemName: "...")`
-- **입력 필드**: `TextField` + `.textFieldStyle(.roundedBorder)`
-
-### 다크모드
-- 모든 화면은 **다크모드 대응 필수**
-- 색상은 반드시 시스템/Asset 기반으로 지정 (위 "색상" 규칙 참조)
-- `#Preview` 블록에 라이트/다크 둘 다 추가:
-  ```swift
-  #Preview("Light") { ContentView() }
-  #Preview("Dark") {
-      ContentView().preferredColorScheme(.dark)
-  }
-  ```
-
-### 접근성
-- 모든 상호작용 요소에 `.accessibilityLabel(...)` 또는 명확한 텍스트 제공
-- 탭 가능한 영역은 최소 **44x44pt** 확보
+> 💡 UI 디자인 규칙(색상/폰트/간격/컴포넌트/다크모드/접근성)은 [ToDoList/Presentation/CLAUDE.md](ToDoList/Presentation/CLAUDE.md) 참고.
 
 ---
 
