@@ -1,17 +1,24 @@
-//
-//  TestAppApp.swift
-//  TestApp
-//
-//  Created by woogie on 2/11/26.
-//
-
 import SwiftUI
 
 @main
 struct TestAppApp: App {
+    @State private var viewModel = Self.makeViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: viewModel)
         }
+    }
+
+    @MainActor
+    private static func makeViewModel() -> TodoListViewModel {
+        let dataSource = LocalTodoDataSource()
+        let repository = TodoRepositoryImpl(dataSource: dataSource)
+        return TodoListViewModel(
+            fetchTodos: FetchTodosUseCase(repository: repository),
+            addTodo: AddTodoUseCase(repository: repository),
+            toggleTodo: ToggleTodoUseCase(repository: repository),
+            deleteTodo: DeleteTodoUseCase(repository: repository)
+        )
     }
 }
