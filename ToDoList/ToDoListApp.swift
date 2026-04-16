@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct TestAppApp: App {
+struct ToDoListApp: App {
     @State private var viewModel = Self.makeViewModel()
 
     var body: some Scene {

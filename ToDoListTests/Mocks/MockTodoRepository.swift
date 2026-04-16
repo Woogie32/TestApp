@@ -1,5 +1,5 @@
 import Foundation
-@testable import TestApp
+@testable import ToDoList
 
 actor MockTodoRepository: TodoRepository {
     private(set) var storage: [Todo] = []

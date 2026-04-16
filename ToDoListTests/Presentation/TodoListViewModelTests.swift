@@ -1,6 +1,6 @@
 import Testing
 import Foundation
-@testable import TestApp
+@testable import ToDoList
 
 @MainActor
 struct TodoListViewModelTests {

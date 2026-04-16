@@ -1,13 +1,13 @@
 //
-//  TestAppUITestsLaunchTests.swift
-//  TestAppUITests
+//  ToDoListUITestsLaunchTests.swift
+//  ToDoListUITests
 //
 //  Created by woogie on 2/11/26.
 //
 
 import XCTest
 
-final class TestAppUITestsLaunchTests: XCTestCase {
+final class ToDoListUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

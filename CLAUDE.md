@@ -7,7 +7,7 @@
 
 ## 📱 프로젝트 개요
 
-- **이름**: TestApp
+- **이름**: ToDoList
 - **종류**: SwiftUI 기반 iOS 앱 (학습용 Todo 앱)
 - **플랫폼**: iOS
 - **언어/프레임워크**: Swift, SwiftUI
@@ -20,9 +20,9 @@
 Clean Architecture 3계층(Domain / Data / Presentation)으로 폴더를 분리합니다.
 
 ```
-TestApp/
-├── TestApp/
-│   ├── TestAppApp.swift             # @main 진입점, 의존성 주입 조립
+ToDoList/
+├── ToDoList/
+│   ├── ToDoListApp.swift            # @main 진입점, 의존성 주입 조립
 │   ├── Assets.xcassets              # 이미지/색상 리소스
 │   │
 │   ├── Domain/                      # 🟡 순수 비즈니스 로직 (의존성 없음)
@@ -51,12 +51,12 @@ TestApp/
 │       └── ViewModels/              # @Observable ViewModel
 │           └── TodoListViewModel.swift
 │
-├── TestAppTests/                    # 단위 테스트 (Swift Testing)
-│   └── TestAppTests.swift
-├── TestAppUITests/                  # UI 테스트 (XCTest)
-│   ├── TestAppUITests.swift
-│   └── TestAppUITestsLaunchTests.swift
-└── TestApp.xcodeproj
+├── ToDoListTests/                   # 단위 테스트 (Swift Testing)
+│   └── ToDoListTests.swift
+├── ToDoListUITests/                 # UI 테스트 (XCTest)
+│   ├── ToDoListUITests.swift
+│   └── ToDoListUITestsLaunchTests.swift
+└── ToDoList.xcodeproj
 ```
 
 ---
