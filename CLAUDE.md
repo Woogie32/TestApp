@@ -61,6 +61,19 @@ ToDoList/
 
 ---
 
+## 🖼️ 디자인 참고 자료
+
+UI 작업 시 참고할 시안/스크린샷은 [docs/design/](docs/design/) 에 화면별로 정리되어 있습니다.
+
+- 화면별 폴더: `docs/design/<screen-name>/` (예: `todo-list/`, `add-todo/`)
+- 공통 요소(색상/아이콘 등): `docs/design/common/`
+- **UI 관련 작업을 시작할 때 해당 화면 폴더를 먼저 확인할 것.**
+- 자세한 규칙은 [docs/design/README.md](docs/design/README.md) 참고.
+
+> ⚠️ 앱에 실제로 표시되는 이미지는 `ToDoList/Assets.xcassets` 에 추가하며, `docs/design/` 은 순수 참고용입니다.
+
+---
+
 ## 🔨 빌드 & 테스트
 
 **반드시 MCP 도구를 사용할 것.** `xcodebuild` 를 Bash로 직접 호출하지 않습니다.
